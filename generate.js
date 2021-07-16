@@ -65,7 +65,7 @@ document.getElementById('submitBtn').addEventListener('click', function(){
 		
 	}
 	if(submitValue == ''){
-		alert("input generate Pin")
+		alert("first submit generate Pin")
 	}
 
 	

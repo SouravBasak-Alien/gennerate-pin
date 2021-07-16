@@ -33,16 +33,45 @@ function delBtn() {
 
 
 document.getElementById('submitBtn').addEventListener('click', function(){
+	
+
 	const generateValue = document.getElementById('generateInput').value;
 	const submitValue = document.getElementById('submitInput').value;
 
-	if(generateValue == submitValue){
-		pinstatus("block","none")
+	
+
+	if(submitValue != ''){
+
+		if(generateValue == submitValue){
+			pinstatus("block","none")
+		}
+		else{
+			pinstatus("none","block")
+			const tryValue = document.getElementById('tryNum').innerText;
+			tryNumber = parseInt(tryValue);
+			const tryCount = tryNumber;
+			
+			if(tryValue != 0 ){
+				const tryResult = tryCount - 1;
+				console.log(tryResult)
+				document.getElementById('tryNum').innerText = tryResult;
+			}
+			else{
+				alert('try later')
+			}
+
+		}
+		
+		
 	}
-	else{
-		pinstatus("none","block")
+	if(submitValue == ''){
+		alert("input generate Pin")
 	}
+
+	
 })
+
+
 
 function pinstatus(pinRight,pinWrong){
 	const rightStatus = document.getElementById('pinRight');
